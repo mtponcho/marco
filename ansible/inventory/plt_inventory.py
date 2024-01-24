@@ -10,7 +10,7 @@ def get_name_tag(tags):
             return tag["Value"].lower()
     for tag in tags:
         if tag["Key"] == "Name":
-            return tag["Value"].lower() + ".tideworks.int"
+            return tag["Value"].lower() + ".mydomain.com"
     return None
 
 
@@ -27,10 +27,7 @@ def get_instances(account="Dev_Shared", inventory=[]):
     instances = ec2.instances.all()
 
     skip_these_names = [
-        "twc-jenkins-worker",
-        "twc-windows-jenkins-worker",
-        "dataplatform-workers",
-        "eks",
+        "exceptions"
     ]
     # Loop through each instance
     for instance in instances:
